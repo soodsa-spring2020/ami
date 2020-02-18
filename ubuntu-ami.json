@@ -1,6 +1,6 @@
 {
     "variables": {
-        "ami_users": "{{env `aws_dev_account`}}, {{env `aws_prod_account`}}",
+        "ami_users": "{{env `aws_ami_account`}}",
         "aws_access_key": "{{env `aws_access_key`}}",
         "aws_secret_key": "{{env `aws_secret_key`}}",
         "aws_region": "{{env `aws_region`}}",
@@ -19,7 +19,7 @@
             "source_ami": "{{user `source_ami`}}",
             "ssh_username": "{{user `ssh_username`}}",
             "ami_name": "csye6225_{{timestamp}}",
-            "ami_users" : "{{user `ami_users` }}",
+            "ami_users": "{{user `ami_users` }}",
             "ami_description": "Ubuntu AMI for CSYE 6225 - Spring 2020",
             "launch_block_device_mappings": [
                 {
