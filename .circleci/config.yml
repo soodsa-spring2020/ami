@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build:
+    description: Build AMI image
+    docker:
+      - image: hashicorp/packer
+    steps:
+      - checkout
+      - run:
+          name: "Packer Build AMI"
+          command: packer build ubuntu-ami.json
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
