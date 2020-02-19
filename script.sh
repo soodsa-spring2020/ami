@@ -15,11 +15,11 @@ sudo apt-get install apache2 -y
 sudo a2enmod proxy proxy_http proxy_html
 sudo systemctl restart apache2
 cd /etc/apache2/sites-available/
+sudo chmod 777 000-default.conf
 sudo truncate -s0 000-default.conf
 sudo echo "<VirtualHost *:80>" > 000-default.conf
 sudo echo "ProxyPreserveHost On" >> 000-default.conf
 sudo echo "ProxyPass / http://127.0.0.1:5000/" >> 000-default.conf
 sudo echo "ProxyPassReverse / http://127.0.0.1:5000/" >> 000-default.conf
 sudo echo "</VirtualHost>" >> 000-default.conf
-sudo a2ensite 000-default
 sudo systemctl restart apache2
