@@ -14,7 +14,7 @@ sudo apt install unzip
 sudo apt-get install apache2 -y
 sudo a2enmod proxy proxy_http proxy_html
 sudo systemctl restart apache2
-sudo cd /etc/apache2/sites-available/
+cd /etc/apache2/sites-available/
 sudo truncate -s0 000-default.conf
 sudo echo "<VirtualHost *:80>" > 000-default.conf
 sudo echo "ProxyPreserveHost On" >> 000-default.conf
