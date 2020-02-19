@@ -30,6 +30,5 @@ packer build -var-file=./vars.json ubuntu-ami.json
 }
 ```
 
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
