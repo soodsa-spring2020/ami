@@ -1,12 +1,12 @@
 {
     "variables": {
-        "ami_users": "{{env `aws_ami_account`}}",
+        "ami_users": "{{env `ami_users`}}",
         "aws_access_key": "{{env `aws_access_key`}}",
         "aws_secret_key": "{{env `aws_secret_key`}}",
         "aws_region": "{{env `aws_region`}}",
         "subnet_id": "{{env `subnet_id`}}",
         "source_ami": "{{env `source_ami`}}",
-        "ssh_username": "{{env `username`}}"
+        "ssh_username": "{{env `ssh_username`}}"
     },
     "builders": [
         {
