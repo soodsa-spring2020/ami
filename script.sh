@@ -8,6 +8,4 @@ sudo apt-get install apt-transport-https
 sudo apt update
 sudo apt-get install dotnet-sdk-3.0 -y
 sudo apt update
-sudo dotnet tool install --global dotnet-ef --version 3.0
-sudo apt update
 sudo apt install unzip
