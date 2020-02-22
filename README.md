@@ -1,4 +1,4 @@
-# AMI - CSYE 6225
+#  AMI - CSYE 6225
 
 The AMI is a supported and maintained Ubuntu image for use on Amazon Elastic Compute Cloud (Amazon EC2). It is designed to provide a stable, secure, and high performance execution environment for applications running on Amazon EC2.
 
