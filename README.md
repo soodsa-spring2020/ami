@@ -10,14 +10,7 @@ Use the Hashicorp Packer Image  to build the AMI.
 hashicorp/packer
 ```
 
-## Usage
-
-```bash
-packer validate -var-file=./vars.json ubuntu-ami.json
-packer build -var-file=./vars.json ubuntu-ami.json
-```
-
-## Credentials
+## Setup
 ```json
 {
     "aws_region": "",
@@ -29,6 +22,15 @@ packer build -var-file=./vars.json ubuntu-ami.json
     "ami_users": ""
 }
 ```
+
+## Usage
+
+```bash
+packer validate -var-file=./vars.json ubuntu-ami.json
+packer build -var-file=./vars.json ubuntu-ami.json
+```
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
