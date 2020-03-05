@@ -5,7 +5,7 @@ jobs:
     description: Build AMI image
     docker:
       - image: hashicorp/packer
-      - image: ubuntu:18.04
+      - image: cimg/base:2020.01
     steps:
       - checkout
       - run:
