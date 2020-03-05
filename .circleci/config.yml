@@ -5,30 +5,11 @@ jobs:
     description: Build AMI image
     docker:
       - image: hashicorp/packer
-      - image: mcr.microsoft.com/dotnet/core/sdk:3.0
     steps:
       - checkout
       - run:
-          name: "Update Package"
-          command: apt-get update
-      - run:
-          name: "Install Ruby"
-          command: apt-get install ruby
-      - run:
-          name: "Install wget"
-          command: apt-get install wget
-      - run:
-          name: "Install Code Deploy Agent"
-          command: wget https://${s3_bucket_name}.s3.${aws_region}.amazonaws.com/latest/install
-      - run:
-          name: "Update Permissions"
-          command: chmod +x ./install
-      - run:
-          name: "Run Install"
-          command: ./install auto
-      # - run:
-      #     name: "Packer Build AMI"
-      #     command: packer build ubuntu-ami.json
+          name: "Packer Build AMI"
+          command: packer build ubuntu-ami.json
 workflows:
   version: 2
   build_pack:
