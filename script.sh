@@ -9,3 +9,8 @@ sudo apt update
 sudo apt-get install dotnet-sdk-3.0 -y
 sudo apt update
 sudo apt install unzip
+sudo apt update
+sudo apt-get install ruby -y
+sudo wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
