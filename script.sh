@@ -8,6 +8,21 @@ sudo apt-get install apt-transport-https
 sudo apt update
 sudo apt-get install dotnet-sdk-3.0 -y
 sudo apt update
+sudo apt-get install apache2 -y
+sudo a2enmod proxy proxy_http proxy_html
+sudo systemctl restart apache2
+sudo chmod 777 /etc/apache2/sites-available/000-default.conf
+sudo truncate -s0 /etc/apache2/sites-available/000-default.conf
+sudo echo "<VirtualHost *:*>" > /etc/apache2/sites-available/000-default.conf
+sudo echo "RequestHeader set 'X-Forwarded-Proto' expr=%{REQUEST_SCHEME}" > /etc/apache2/sites-available/000-default.conf
+sudo echo "</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+sudo echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf
+sudo echo "ProxyPreserveHost On" >> /etc/apache2/sites-available/000-default.conf
+sudo echo "ProxyPass / http://127.0.0.1:5002/" >> /etc/apache2/sites-available/000-default.conf
+sudo echo "ProxyPassReverse / http://127.0.0.1:5002/" >> /etc/apache2/sites-available/000-default.conf
+sudo echo "</VirtualHost>" >> /etc/apache2/sites-available/000-default.conf
+sudo chmod 644 /etc/apache2/sites-available/000-default.conf
+sudo systemctl restart apache2 
 sudo apt install unzip
 sudo apt update
 sudo apt-get install ruby -y
