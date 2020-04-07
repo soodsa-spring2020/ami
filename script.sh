@@ -16,7 +16,7 @@ sudo truncate -s0 /etc/apache2/sites-available/000-default.conf
 sudo echo "<VirtualHost *:*>" > /etc/apache2/sites-available/000-default.conf
 sudo echo "RequestHeader set 'X-Forwarded-Proto' expr=%{REQUEST_SCHEME}" > /etc/apache2/sites-available/000-default.conf
 sudo echo "</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
-sudo echo "<VirtualHost *:80>" > /etc/apache2/sites-available/000-default.conf
+sudo echo "<VirtualHost *:443>" > /etc/apache2/sites-available/000-default.conf
 sudo echo "ProxyPreserveHost On" >> /etc/apache2/sites-available/000-default.conf
 sudo echo "ProxyPass / http://127.0.0.1:5002/" >> /etc/apache2/sites-available/000-default.conf
 sudo echo "ProxyPassReverse / http://127.0.0.1:5002/" >> /etc/apache2/sites-available/000-default.conf
